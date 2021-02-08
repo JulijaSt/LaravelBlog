@@ -1,0 +1,45 @@
+.py-4 {
+    height: 100vh;
+    display: flex;
+
+    .login {
+        margin: auto;
+
+        &__input {
+            &:hover {
+                border: 1px solid $blue;
+            }
+        }
+
+        &__title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            padding: 0.5rem 1.25rem;
+            font-family: $main-font;
+        }
+
+        &__info {
+            font-size: 1rem;
+            font-weight: 500;
+            font-family: $main-font;
+            padding: 0.25rem 0 1rem;
+
+            @media (max-width: 768px) {
+                padding-bottom: 0;
+                margin-bottom: 0.25rem;
+            }
+        }
+    }
+}
+
+.collapse:not(.show) {
+    display: block !important;
+}
+
+.container {
+    display: flex;
+}
+
+.navbar-collapse {
+    flex: none !important;
+}

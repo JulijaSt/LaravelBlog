@@ -1,6 +1,52 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
 @charset "UTF-8";
 
+.py-4 {
+  height: 100vh;
+  display: flex;
+}
+
+.py-4 .login {
+  margin: auto;
+}
+
+.py-4 .login__input:hover {
+  border: 1px solid #3490dc;
+}
+
+.py-4 .login__title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  padding: 0.5rem 1.25rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.py-4 .login__info {
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  padding: 0.25rem 0 1rem;
+}
+
+@media (max-width: 768px) {
+  .py-4 .login__info {
+    padding-bottom: 0;
+    margin-bottom: 0.25rem;
+  }
+}
+
+.collapse:not(.show) {
+  display: block !important;
+}
+
+.container {
+  display: flex;
+}
+
+.navbar-collapse {
+  flex: none !important;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

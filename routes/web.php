@@ -18,9 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/blog-admin', function () {
-    print('name');
-})->middleware('auth');
+// Route::get('/blog-admin', function () {
+//     return view('blog-admin');
+// })->middleware('auth');
 
 Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/blog-admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
