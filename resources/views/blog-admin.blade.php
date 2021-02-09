@@ -2,6 +2,9 @@
 
 @section('content')
     <div class="container">
+        <div class="holder">
+            <a class="btn btn-primary" href="{{ url('/blog-admin/create-post') }}">Add Post</a>
+        </div>
         @foreach ($posts as $post)
             <article class="posts">
                 <h1 class="posts__title">{{ $post['title'] }}</h1>

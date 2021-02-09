@@ -19,10 +19,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/blog-admin/create-post', function () {
+    return view('create-post');
+});
+
 Auth::routes();
 Route::get('/blog-admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
 
 Route::get('/blog-admin', [BlogPostController::class, 'index'])->name('posts.index')->middleware('auth');
+Route::post('/blog-admin', [BlogPostController::class, 'store'])->name('posts.store')->middleware('auth');
 Route::get('/blog-admin/{id}', [BlogPostController::class, 'show'])->name('posts.show')->middleware('auth');
 
 

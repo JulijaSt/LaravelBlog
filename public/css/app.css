@@ -2,7 +2,7 @@
 @charset "UTF-8";
 
 .py-4 {
-  min-height: 100vh;
+  min-height: calc(100vh - 110px);
 }
 
 .py-4 .login {
@@ -103,6 +103,26 @@
   display: flex;
   justify-content: flex-end;
   padding-right: 2rem;
+}
+
+.holder {
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 1px solid #dadada;
+  padding-bottom: 1.25rem;
+}
+
+.label {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0;
+  margin-bottom: 0.25rem;
+}
+
+.input {
+  width: 100%;
 }
 
 /*!
