@@ -1,9 +1,13 @@
 .py-4 {
-    height: 100vh;
-    display: flex;
+    min-height: 100vh;
 
     .login {
-        margin: auto;
+        height: calc(100vh - 3rem);
+        display: flex;
+
+        &__table {
+            margin: auto;
+        }
 
         &__input {
             &:hover {
@@ -36,10 +40,10 @@
     display: block !important;
 }
 
-.container {
-    display: flex;
-}
-
 .navbar-collapse {
     flex: none !important;
+}
+
+.justify-content-center {
+    width: 100%;
 }

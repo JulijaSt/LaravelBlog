@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\BlogPostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/blog-admin', function () {
-//     return view('blog-admin');
-// })->middleware('auth');
-
 Auth::routes();
-Route::get('/blog-admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/blog-admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
+
+Route::get('/blog-admin', [BlogPostController::class, 'index'])->name('posts.index')->middleware('auth');
+Route::get('/blog-admin/{id}', [BlogPostController::class, 'show'])->name('posts.show')->middleware('auth');
+
+

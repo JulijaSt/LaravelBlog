@@ -2,11 +2,15 @@
 @charset "UTF-8";
 
 .py-4 {
-  height: 100vh;
-  display: flex;
+  min-height: 100vh;
 }
 
 .py-4 .login {
+  height: calc(100vh - 3rem);
+  display: flex;
+}
+
+.py-4 .login__table {
   margin: auto;
 }
 
@@ -39,12 +43,66 @@
   display: block !important;
 }
 
-.container {
-  display: flex;
-}
-
 .navbar-collapse {
   flex: none !important;
+}
+
+.justify-content-center {
+  width: 100%;
+}
+
+.footer {
+  background-color: #fff;
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 1;
+}
+
+.footer__copyright {
+  font-size: 0.9rem;
+  margin: 1rem 0;
+}
+
+.posts {
+  border-bottom: 1px solid #dadada;
+  padding-bottom: 1rem;
+}
+
+.posts:last-of-type {
+  border: none;
+  padding-bottom: 0;
+}
+
+.posts__title {
+  font-family: "Sriracha", cursive;
+  font-size: 3rem;
+  padding: 1rem 0 0;
+}
+
+.posts__time {
+  font-weight: 700;
+  padding-bottom: 0.5rem;
+}
+
+.posts__info {
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.posts__read-more {
+  font-family: "Sriracha", cursive;
+  font-size: 1rem;
+  color: #000;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 2rem;
 }
 
 /*!

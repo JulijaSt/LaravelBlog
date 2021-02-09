@@ -1,0 +1,15 @@
+.footer {
+    background-color: #fff;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 1;
+  
+    &__copyright {
+      font-size: 0.9rem;
+      margin: 1rem 0;
+    }
+  }

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container login">
-    <div class="row justify-content-center">
+    <div class="login__table row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header login__title">{{ __('Login') }}</div>

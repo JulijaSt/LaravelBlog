@@ -1,0 +1,37 @@
+.posts {
+    border-bottom: 1px solid #dadada;
+    padding-bottom: 1rem;
+
+    &:last-of-type {
+        border: none; 
+        padding-bottom: 0;
+    }
+
+    &__title {
+        font-family: 'Sriracha', cursive;
+        font-size: 3rem;
+        padding: 1rem 0 0;
+    }
+
+    &__time {
+        font-weight: 700;
+        padding-bottom: 0.5rem;
+    }
+
+    &__info {
+        display: -webkit-box;
+        -webkit-line-clamp: 8;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        margin-bottom: 1.5rem;
+    }
+
+    &__read-more {
+        font-family: 'Sriracha', cursive;
+        font-size: 1rem;
+        color: #000;
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 2rem;
+    }
+}

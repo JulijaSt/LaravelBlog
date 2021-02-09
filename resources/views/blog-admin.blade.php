@@ -1,7 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <h1>Admin panel</h1>
-</div>
+    <div class="container">
+        @foreach ($posts as $post)
+            <article class="posts">
+                <h1 class="posts__title">{{ $post['title'] }}</h1>
+                <p class="posts__time">{{ $post['created_at']->format('d F, Y')}}</p>
+                <div class="posts__info"><?php echo $post['text']; ?></div>
+                <a class="posts__read-more" href="{{ route('posts.show', $post['id']) }}">Read more...</a>
+            </article>
+        @endforeach
+    </div>
 @endsection
