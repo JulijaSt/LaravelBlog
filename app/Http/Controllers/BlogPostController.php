@@ -15,6 +15,11 @@ class BlogPostController extends Controller
         return view('blogpost', ['post' => \App\Models\Blogpost::find($id)]);
     }
 
+    public function destroy($id){
+        \App\Models\Blogpost::destroy($id);
+        return redirect('/blog-admin')->with('status_success', 'Post deleted!');
+    }
+
     public function store(Request $request)
     {
         $this->validate($request, [

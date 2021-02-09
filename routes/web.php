@@ -29,5 +29,6 @@ Route::get('/blog-admin', [App\Http\Controllers\HomeController::class, 'index'])
 Route::get('/blog-admin', [BlogPostController::class, 'index'])->name('posts.index')->middleware('auth');
 Route::post('/blog-admin', [BlogPostController::class, 'store'])->name('posts.store')->middleware('auth');
 Route::get('/blog-admin/{id}', [BlogPostController::class, 'show'])->name('posts.show')->middleware('auth');
+Route::delete('/blog-admin/{id}', [BlogPostController::class, 'destroy'])->name('posts.destroy')->middleware('auth');
 
 
