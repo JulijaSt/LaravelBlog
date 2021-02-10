@@ -18,7 +18,7 @@ WYSWYG ("TinyMCE") text editor was used to facilitate administrator text formatt
 
 2. Download or clone this repository to your computer (create LaravelBlog folder): `C:/Program Files/Ampps/www/LaravelBlog` .
 
-3. Add `.htaccess` file into `Ampps/www` folder. Then add the following lines:
+3. Add `.htaccess` file into `Ampps/www` folder. Then inside file add the following lines:
 
 ```
     <IfModule mod_rewrite.c>
