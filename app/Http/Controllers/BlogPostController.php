@@ -15,6 +15,10 @@ class BlogPostController extends Controller
         return view('blogpost', ['post' => \App\Models\Blogpost::find($id)]);
     }
 
+    public function publicIndex(){
+        return view('welcome', ['posts' => \App\Models\Blogpost::all()->sortByDesc('id')]);
+    }
+
     public function edit($id){
         return view('edit-post', ['post' => \App\Models\Blogpost::find($id)]);
     }

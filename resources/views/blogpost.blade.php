@@ -24,12 +24,14 @@
                     <p class="comment__time">{{ $post['created_at']->diffForHumans() }}</p>
                 </div>
                 <p class="comment__cm">{{ $cm['comment'] }}</p>
+                @if (auth()->check())
                 <div class="btn-group comment__destroy" style="overflow: auto">
                     <form style='float: left;' action="{{ route('comments.destroy', ['id'=>$post['id'],'commentid'=>$cm['id']] ) .  '#comments' }}" method="POST">
                         @method('DELETE') @csrf
                         <input class="btn btn-danger" type="submit" value="DELETE"> 
                     </form>
                 </div>
+                @endif
             </div>
         @endforeach
         @if (count($post->comment) == 0)

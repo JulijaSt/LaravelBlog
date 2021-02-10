@@ -3,6 +3,7 @@
 @section('content')
     <div class="container">
         <div class="holder">
+            <a class="btn btn-primary first" href="{{ route('main') }}" target="_blank">View how public blog look</a>
             <a class="btn btn-primary" href="{{ route('posts.create') }}">Add Post</a>
         </div>
         @foreach ($posts as $post)

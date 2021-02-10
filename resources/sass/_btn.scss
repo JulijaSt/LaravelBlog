@@ -1,8 +1,17 @@
 .holder {
     display: flex;
-    justify-content: flex-end;
+    flex-wrap: wrap;
+    justify-content: space-between;
     border-bottom: 1px solid #dadada;
     padding-bottom: 1.25rem;
+}
+
+.first {
+    margin-right: 1rem;
+}
+
+.btn {
+    margin-bottom: 0.5rem;
 }
 
 .btn-group {

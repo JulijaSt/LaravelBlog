@@ -22,13 +22,15 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-    <script src="https://cdn.tiny.cloud/1/rpid8tppa7hj890d4pkh2t9m7jjd8c5u60thymd74s3if3eh/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/rpid8tppa7hj890d4pkh2t9m7jjd8c5u60thymd74s3if3eh/tinymce/5/tinymce.min.js"
+        referrerpolicy="origin"></script>
     <script>
-    tinymce.init({
-      selector: '#mytextarea',
-      
-    });
-  </script>
+        tinymce.init({
+            selector: '#mytextarea',
+
+        });
+
+    </script>
 </head>
 
 <body>
@@ -66,7 +68,7 @@
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
-                                                                                 document.getElementById('logout-form').submit();">
+                                                                                         document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
                                         </a>
 
@@ -81,18 +83,26 @@
                     </div>
                 </div>
             </nav>
-        @endif
-        <main class="py-4">
-            @yield('content')
-        </main>
-        @if (auth()->check())
+            @endif
+            @if (!auth()->check())
+                <header class="header">
+                    <div class="container">
+                        <a class="header__link" href="{{ route('main') }}">
+                            <h1 class="header__title">Travel Blog</h1>
+                        </a>
+                    </div>
+                </header>
+            @endif
+            <main class="py-4">
+                @yield('content')
+            </main>
             <footer class='footer'>
                 <div class='container'>
                     <p class='footer__copyright'>© {{ now()->year }} Copyright:
                         {{ config('app.name', 'Travel Blog') }}</p>
                 </div>
             </footer>
-        @endif
+
     </div>
 </body>
 

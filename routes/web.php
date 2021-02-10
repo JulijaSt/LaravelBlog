@@ -16,9 +16,9 @@ use App\Http\Controllers\CommentController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// })->name('main');
 
 Auth::routes();
 Route::get('/blog-admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
@@ -37,3 +37,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/blog-admin/{id}', [CommentController::class, 'store'])->name('comments.store');
     Route::delete('/blog-admin/{id}/comments/{commentid}', [CommentController::class, 'destroy'])->name('comments.destroy');
 });
+
+Route::get('/', [BlogPostController::class, 'publicIndex'])->name('main');
+Route::get('posts/{id}', [BlogPostController::class, 'show'])->name('public.show');
+Route::post('posts/{id}', [CommentController::class, 'store'])->name('comments.store');
