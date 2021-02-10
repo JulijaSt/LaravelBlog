@@ -19,16 +19,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/blog-admin/create-post', function () {
-    return view('create-post');
-});
-
 Auth::routes();
 Route::get('/blog-admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
 
-Route::get('/blog-admin', [BlogPostController::class, 'index'])->name('posts.index')->middleware('auth');
-Route::post('/blog-admin', [BlogPostController::class, 'store'])->name('posts.store')->middleware('auth');
-Route::get('/blog-admin/{id}', [BlogPostController::class, 'show'])->name('posts.show')->middleware('auth');
-Route::delete('/blog-admin/{id}', [BlogPostController::class, 'destroy'])->name('posts.destroy')->middleware('auth');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/blog-admin/create-post', function () {
+        return view('create-post');
+    })->name('posts.create');
 
-
+    Route::get('/blog-admin', [BlogPostController::class, 'index'])->name('posts.index');
+    Route::post('/blog-admin', [BlogPostController::class, 'store'])->name('posts.store');
+    Route::get('/blog-admin/{id}', [BlogPostController::class, 'show'])->name('posts.show');
+    Route::delete('/blog-admin/{id}', [BlogPostController::class, 'destroy'])->name('posts.destroy');
+    Route::put('/blog-admin/{id}', [BlogPostController::class, 'update'])->name('posts.update');
+    Route::get('/blog-admin/edit-post/{id}', [BlogPostController::class, 'edit'])->name('posts.edit');
+});
