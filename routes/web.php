@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\BlogPostController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,4 +34,6 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/blog-admin/{id}', [BlogPostController::class, 'destroy'])->name('posts.destroy');
     Route::put('/blog-admin/{id}', [BlogPostController::class, 'update'])->name('posts.update');
     Route::get('/blog-admin/edit-post/{id}', [BlogPostController::class, 'edit'])->name('posts.edit');
+    Route::post('/blog-admin/{id}', [CommentController::class, 'store'])->name('comments.store');
+    Route::delete('/blog-admin/{id}/comments/{commentid}', [CommentController::class, 'destroy'])->name('comments.destroy');
 });

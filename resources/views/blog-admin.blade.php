@@ -8,7 +8,10 @@
         @foreach ($posts as $post)
             <article class="posts">
                 <h1 class="posts__title">{{ $post['title'] }}</h1>
-                <p class="posts__time">{{ $post['created_at']->format('d F, Y')}}</p>
+                <p class="posts__time">{{ $post['created_at']->format('d F, Y')}}
+                    <span class="posts__simbol">|</span>
+                    <a class="posts__comments"  href="{{ route('posts.show', $post['id']) . '#comments' }}">{{ count($post->comment)}} @if (count($post->comment) > 1)  {{ "comments" }} @else {{ "comment " }} @endif</a>
+                </p>
                 <div class="posts__info">{!! $post['text'] !!}</div>
                 <a class="posts__read-more" href="{{ route('posts.show', $post['id']) }}">Read more...</a>
                 <div class="btn-group" style="overflow: auto">

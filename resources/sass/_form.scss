@@ -5,6 +5,11 @@
     display: block;
     margin-bottom: 0;
     margin-bottom: 0.25rem;
+
+    &--comment {
+        text-transform: capitalize;
+        font-size: 0.8rem;
+    }
 }
 
 .input {

@@ -10,4 +10,9 @@ class Blogpost extends Model
     use HasFactory;
 
     public $fillable = ['title', 'text'];
+
+    public function comment(){
+        return $this->hasMany('App\Models\Comment');
+    }
+
 }

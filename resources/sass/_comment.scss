@@ -1,0 +1,34 @@
+.comment {
+    border-bottom: 1px dashed #dadada;
+    margin-bottom: 1rem;
+
+    &__top {
+        display: flex;
+    }
+
+    &__name {
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+    &__time {
+        font-weight: 300;
+        margin-bottom: 0.5rem;
+    }
+
+    &__destroy {
+        margin: 0 0 1rem;
+    }
+
+    &__null {
+        padding-top: 0.25rem;
+        font-size: 1rem;
+    }
+
+}
+
+.comment-title {
+    font-family: "Sriracha", cursive;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
