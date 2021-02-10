@@ -18,22 +18,31 @@ WYSWYG ("TinyMCE") text editor was used to facilitate administrator text formatt
 
 2. Download or clone this repository to your computer (create LaravelBlog folder): `C:/Program Files/Ampps/www/LaravelBlog` .
 
-3. Open the command line inside the project directory. 
+3. Add `.htaccess` file into `Ampps/www` folder. Then add the following lines:
 
-4. Depending on where your `Composer` is installed run: </br>
+```
+    <IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(.*)$ LaravelBlog/public/$1 [L]
+    </IfModule>
+```
+
+4. Open the command line inside the project directory. 
+
+5. Depending on where your `Composer` is installed run: </br>
 `composer install` or `php composer.phar install`
 
-5. Run the following command in the command line : </br>
+6. Run the following command in the command line : </br>
 `npm install` and `npm run dev`
 
-6. Create SCHEMA `laravelblog` in the MySQL database using `root` user with password `mySQL`.
+7. Create SCHEMA `laravelblog` in the MySQL database using `root` user with password `mySQL`.
 
-7.  Run the following command in the command line : </br>
+8.  Run the following command in the command line : </br>
 `php artisan migrate` and `php artisan db:seed`
 
-8. Check that the data has been created in the database.
+9. Check that the data has been created in the database.
 
-9. Change `.env.example` file name into `.env`. Then change the following lines:
+10. Change `.env.example` file name into `.env`. Then change the following lines:
 
 ```
     APP_NAME="Travel Blog"
@@ -45,7 +54,7 @@ WYSWYG ("TinyMCE") text editor was used to facilitate administrator text formatt
     DB_PASSWORD=mysql
 ```
 
-10. Go to the browser using this link: </br> 
+11. Go to the browser using this link: </br> 
 `http://localhost/` </br> </br>
 or if you want to see the administrator part: </br>
 `http://localhost/blog-admin` or  `http://localhost/login`</br>
